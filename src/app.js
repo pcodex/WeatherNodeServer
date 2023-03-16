@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const weather = require('./utils/weather')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //set the public directory to serve assets and client side JS
 const pubPath = path.join(__dirname, '../public')
@@ -150,6 +151,7 @@ app.get('*', (req,res) => {
  
 })
 
-app.listen(3000, () => {
-    console.log('Server is running')
+app.listen(port, () => {
+    //console.log(process.env)
+    console.log('Weather Server is running on port '+ port)
 })

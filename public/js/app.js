@@ -18,7 +18,7 @@ formelem.addEventListener('submit', (e)=> {
     forecastElem.innerHTML = ''
 
 
-    fetch('http://localhost:3000/weather?address='+searchTerm).then((response)=> {
+    fetch('/weather?address='+searchTerm).then((response)=> {
     response.json().then((data) => {
            
 
