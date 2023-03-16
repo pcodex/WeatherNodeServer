@@ -6,9 +6,10 @@ const weather = require('./utils/weather')
 
 const app = express()
 
-//set the directory to serve assets
+//set the public directory to serve assets and client side JS
 const pubPath = path.join(__dirname, '../public')
-//tell express which directory is used to serve assets
+
+//tell express which directory is used to serve assets and client side JavaScript
 app.use(express.static(pubPath))
 
 //use handlebars
@@ -16,9 +17,10 @@ const viewsPath = path.join(__dirname,'../templates/views')
 app.set('view engine','hbs')
 app.set('views',viewsPath)
 
-//set up Partials
+//set up a path to the Partials directory
 const partialsPath = path.join(__dirname, '../templates/partials')
-//tell HBS about the partials
+
+//tell HBS about the partials directory
 hbs.registerPartials(partialsPath)
 
 app.get('', (req,res) => {
