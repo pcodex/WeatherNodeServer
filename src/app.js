@@ -95,7 +95,7 @@ app.get('/weather', (req,res) => {
                 {
                     let forecastMsg = "Temperature at "+ time + " was <b>"+ currenttemp + "</b> and it feels like<b> "+feelslike+"</b>"
                     let weathertodayMsg =  "The weather today is "+ "<b>" + weathertoday + "</b>"
-                    let humidityMsg = "Humidity is <b>"+humidity + "</b>"
+                    let humidityMsg = "Humidity is <b>"+humidity + "%</b>"
                     
                                         
 
