@@ -10,7 +10,8 @@ const weather = (latitude,longitude, cback) => {
          cback('No Internet',undefined)
          else
          {
-            const data = JSON.parse(body)   
+            const data = JSON.parse(body) 
+            console.log(data)
             if(data.success == false)
             {
                 cback('Error in weather stack request', undefined)
@@ -23,6 +24,7 @@ const weather = (latitude,longitude, cback) => {
                     country : data.location.country,
                     currenttemp : data.current.temperature,
                     feelslike : data.current.feelslike,
+                    humidity : data.current.humidity,
                     weathertoday : data.current.weather_descriptions[0]
                    } 
                    cback(undefined,weatherdata)

@@ -84,7 +84,7 @@ app.get('/weather', (req,res) => {
             //const lat = data.latitude
             //const lon = data.longitude
     
-            weather(latitude,longitude, (err, {location,region,country,feelslike,weathertoday,time,currenttemp}) => {
+            weather(latitude,longitude, (err, {location,region,country,feelslike,weathertoday,time,currenttemp,humidity}) => {
     
                 if(err)
                 //console.log('Weather Error : '+ err)
@@ -93,14 +93,16 @@ app.get('/weather', (req,res) => {
                 })
                 else
                 {
-                    let forecastMsg = 'Weather recorded at ' + location + ' ' + region+ ' ' + country+ ' at '+ time + ' was '+ currenttemp
-                    forecastMsg +=  '. The weather today is '+ weathertoday
-                    forecastMsg += '. It feels like '+ feelslike
+                    let forecastMsg = "Temperature at "+ time + " was <b>"+ currenttemp + "</b> and it feels like<b> "+feelslike+"</b>"
+                    let weathertodayMsg =  "The weather today is "+ "<b>" + weathertoday + "</b>"
+                    let humidityMsg = "Humidity is <b>"+humidity + "</b>"
                     
                                         
 
                     res.send({
                         forecast : forecastMsg,
+                        wtoday : weathertodayMsg,
+                        htoday : humidityMsg,
                         location : place,                        
                         queryAddress : req.query.address
                     })

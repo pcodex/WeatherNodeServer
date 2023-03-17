@@ -13,9 +13,13 @@ formelem.addEventListener('submit', (e)=> {
 
     const locElem = document.querySelector("#loc")
     const forecastElem = document.querySelector("#fore")
+    const wtodayElem = document.querySelector("#wtoday")
+    const htodayElem = document.querySelector("#htoday")
 
     locElem.textContent = 'Results are loading....'
     forecastElem.innerHTML = ''
+    wtodayElem.innerHTML = ''
+    htodayElem.innerHTML = ''
 
 
     fetch('/weather?address='+searchTerm).then((response)=> {
@@ -28,11 +32,15 @@ formelem.addEventListener('submit', (e)=> {
         }
         else
         {            
-            locElem.innerHTML = data.location
+            locElem.innerHTML = '<b>' + data.location + '</b>'
             forecastElem.innerHTML = data.forecast
+            wtodayElem.innerHTML = data.wtoday
+            htodayElem.innerHTML = data.htoday
             
             console.log(data.location)
             console.log(data.forecast)
+            console.log(data.wtoday)
+            console.log(data.htoday)
         }
         
     })
