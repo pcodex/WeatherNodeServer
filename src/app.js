@@ -39,9 +39,9 @@ app.get('/about', (req,res)=> {
 
     res.render('about', {
         name : 'About Page',
-        devName : 'Prabhu Missier',
+        devName : 'Prab Missier',
         title : 'About Us',
-        author : 'http://samvit.com.au'
+        author : 'https://samvit.com.au'
     })
 
 })
