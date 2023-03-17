@@ -40,7 +40,7 @@ app.get('/about', (req,res)=> {
     res.render('about', {
         name : 'About Page',
         devName : 'Prab Missier',
-        title : 'About Us',
+        title : 'About this App',
         author : 'https://samvit.com.au'
     })
 
@@ -49,12 +49,8 @@ app.get('/about', (req,res)=> {
 app.get('/help',(req,res) => {
     res.render('help', {
         pagename : 'Help',
-        title : 'Help Us',
-        helpcontent : 'To use handlebars set the HBS engine and then the views directory \
-        Also create hbs files in the views directory. Use app.set to set the "view engine" and "views" \
-        Within each hbs file you can expect dynamic content by using variable names within "{{}}}" \
-        and then in app.js you can pass an object containing the variable names as keys with corresponding values \
-        Pass the object as an argument to res.render within the route handler',
+        title : 'How to Use',
+        helpcontent : 'Click on "Home". Enter the name of a city in the search box and click the "Search" button',
         author:'http://samvit.com.au'
         
     })
