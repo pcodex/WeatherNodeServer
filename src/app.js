@@ -39,7 +39,7 @@ app.get('/about', (req,res)=> {
 
     res.render('about', {
         name : 'About Page',
-        content : 'This is a website for Nodejs handlebars',
+        devName : 'Prabhu Missier',
         title : 'About Us',
         author : 'http://samvit.com.au'
     })
