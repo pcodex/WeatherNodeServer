@@ -50,7 +50,7 @@ app.get('/help',(req,res) => {
     res.render('help', {
         pagename : 'Help',
         title : 'How to Use',
-        helpcontent : 'Click on "Home". Enter the name of a city in the search box and click the "Search" button',
+        helpcontent : 'Click on "Home". Enter the name of a city in the search box and click "Search"',
         author:'http://samvit.com.au'
         
     })
